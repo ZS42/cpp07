@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 19:04:17 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/12/02 23:33:19 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/12/03 00:05:43 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,16 @@ template <typename T>
 Array<T>::Array(unsigned int size): _ptr_array(NULL), _size(size)
 {
     if (size != 0)
-    try
     {
-        _size = size;
-        _ptr_array = new T[_size];
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
+        try
+        {
+            _size = size;
+            _ptr_array = new T[_size];
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
     }
     std::cout <<"Parametric constructor called" << std::endl;
 }
@@ -59,17 +61,19 @@ template <typename T>
 Array<T> &Array<T>::operator=(Array const &object)
 {
     if (this != &object)
-    try
     {
-        delete[] _ptr_array;
-        _size = object._size;
-        _ptr_array = new T[object._size];
-        for (unsigned int i = 0; i < object._size; i++)
-            _ptr_array[i] = object._ptr_array[i];
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
+        try
+        {
+            delete[] _ptr_array;
+            _size = object._size;
+            _ptr_array = new T[object._size];
+            for (unsigned int i = 0; i < object._size; i++)
+                _ptr_array[i] = object._ptr_array[i];
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
     }
     return (*this);
 }
