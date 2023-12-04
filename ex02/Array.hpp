@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:39:38 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/12/02 23:44:48 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/12/04 14:55:05 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <cstdlib>
 
 # define RED "\033[0;31m"
 # define GREEN "\033[38:5:2m"
